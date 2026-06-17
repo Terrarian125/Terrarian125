@@ -1,16 +1,14 @@
 ## Hi there 👋
 
-<!--
-**Terrarian125/Terrarian125** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### 🇯🇵 自己紹介
+こんにちは！
+趣味で **Terraria**、**Kenshi**、**Elin** などのModを作っています。
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### 🇺🇸 About Me
+Hi there!
+I enjoy creating mods for games like **Terraria**, **Kenshi**, and **Elin** as a hobby.
+
+---
+⚡ **Fun Fact:** 47°9′S, 126°43′W 🐙
