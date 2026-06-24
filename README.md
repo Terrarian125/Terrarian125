@@ -1,4 +1,4 @@
-## Hi there 👋
+![バナー](Git_banner.svg)
 
 ###  自己紹介
 こんにちは！
