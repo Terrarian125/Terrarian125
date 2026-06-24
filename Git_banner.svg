@@ -2,10 +2,15 @@
   <style>
     /* 全体共通テキストスタイル */
     .typewriter-group {
-      font-family: Consolas, Monaco, "Courier New", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 52px;
+      font-family: "Courier New", Courier, Monaco, Consolas, monospace;
+      font-size: 50px;
       font-weight: 700;
       fill: #ffffff;
+    }
+
+    /* 全選択（Ctrl+A）時の青背景スタイル */
+    .selection-bg {
+      fill: #0078d7;
     }
 
     /* カーソルの常時点滅アニメーション */
@@ -19,66 +24,72 @@
       animation: blink 0.7s infinite;
     }
 
-    /* 全体4秒ループ：最初の50%（2秒）でタイピング、後半50%（2秒）は全文字表示で待機 */
-    @keyframes key-frame-0 { 0%, 100% { opacity: 1; } }
-    @keyframes key-frame-1 { 0%, 3.84% { opacity: 0; } 3.85%, 100% { opacity: 1; } }
-    @keyframes key-frame-2 { 0%, 7.68% { opacity: 0; } 7.69%, 100% { opacity: 1; } }
-    @keyframes key-frame-3 { 0%, 11.53% { opacity: 0; } 11.54%, 100% { opacity: 1; } }
-    @keyframes key-frame-4 { 0%, 15.37% { opacity: 0; } 15.38%, 100% { opacity: 1; } }
-    @keyframes key-frame-5 { 0%, 19.22% { opacity: 0; } 19.23%, 100% { opacity: 1; } }
-    @keyframes key-frame-6 { 0%, 23.06% { opacity: 0; } 23.07%, 100% { opacity: 1; } }
-    @keyframes key-frame-7 { 0%, 26.91% { opacity: 0; } 26.92%, 100% { opacity: 1; } }
-    @keyframes key-frame-8 { 0%, 30.75% { opacity: 0; } 30.76%, 100% { opacity: 1; } }
-    @keyframes key-frame-9 { 0%, 34.60% { opacity: 0; } 34.61%, 100% { opacity: 1; } }
-    @keyframes key-frame-10 { 0%, 38.44% { opacity: 0; } 38.45%, 100% { opacity: 1; } }
-    @keyframes key-frame-11 { 0%, 42.29% { opacity: 0; } 42.30%, 100% { opacity: 1; } }
-    @keyframes key-frame-12 { 0%, 46.13% { opacity: 0; } 46.14%, 100% { opacity: 1; } }
-    @keyframes key-frame-13 { 0%, 49.98% { opacity: 0; } 49.99%, 100% { opacity: 1; } }
+    /* 全体の時間軸を14.5秒（14500ms）に変更
+      タイピング完了後、13.5秒まで10秒間キープ。
+      13.5秒〜14.0秒（約93.1%〜96.5%）でCtrl+A（全選択：青背景）。
+      14.0秒〜14.5秒（約96.5%〜100%）でDelete（一括削除：空白）。
+    */
+    @keyframes step-flow-0  { 0% { display: inline; } 0.68% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-1  { 0%, 0.67% { display: none; } 0.68% { display: inline; } 1.37% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-2  { 0%, 1.36% { display: none; } 1.37% { display: inline; } 2.06% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-3  { 0%, 2.05% { display: none; } 2.06% { display: inline; } 2.75% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-4  { 0%, 2.74% { display: none; } 2.75% { display: inline; } 3.44% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-5  { 0%, 3.43% { display: none; } 3.44% { display: inline; } 4.13% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-6  { 0%, 4.12% { display: none; } 4.13% { display: inline; } 4.82% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-7  { 0%, 4.81% { display: none; } 4.82% { display: inline; } 5.51% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-8  { 0%, 5.50% { display: none; } 5.51% { display: inline; } 6.20% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-9  { 0%, 6.19% { display: none; } 6.20% { display: inline; } 6.89% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-10 { 0%, 6.88% { display: none; } 6.89% { display: inline; } 7.58% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-11 { 0%, 7.57% { display: none; } 7.58% { display: inline; } 8.27% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-12 { 0%, 8.26% { display: none; } 8.27% { display: inline; } 8.96% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-13 { 0%, 8.95% { display: none; } 8.96% { display: inline; } 9.65% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-14 { 0%, 9.64% { display: none; } 9.65% { display: inline; } 10.34% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-15 { 0%, 10.33% { display: none; } 10.34% { display: inline; } 11.03% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-16 { 0%, 11.02% { display: none; } 11.03% { display: inline; } 11.72% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-17 { 0%, 11.71% { display: none; } 11.72% { display: inline; } 12.41% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-18 { 0%, 12.40% { display: none; } 12.41% { display: inline; } 13.10% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-19 { 0%, 13.09% { display: none; } 13.10% { display: inline; } 13.79% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-20 { 0%, 13.78% { display: none; } 13.79% { display: inline; } 14.48% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-21 { 0%, 14.47% { display: none; } 14.48% { display: inline; } 15.17% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-22 { 0%, 15.16% { display: none; } 15.17% { display: inline; } 15.86% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-23 { 0%, 15.85% { display: none; } 15.86% { display: inline; } 16.55% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-24 { 0%, 16.54% { display: none; } 16.55% { display: inline; } 17.24% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-25 { 0%, 17.23% { display: none; } 17.24% { display: inline; } 17.93% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-26 { 0%, 17.92% { display: none; } 17.93% { display: inline; } 18.62% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-27 { 0%, 18.61% { display: none; } 18.62% { display: inline; } 19.31% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-28 { 0%, 19.30% { display: none; } 19.31% { display: inline; } 20.00% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-29 { 0%, 19.99% { display: none; } 20.00% { display: inline; } 20.69% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-30 { 0%, 20.68% { display: none; } 20.69% { display: inline; } 21.37% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-31 { 0%, 21.36% { display: none; } 21.37% { display: inline; } 22.06% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-32 { 0%, 22.05% { display: none; } 22.06% { display: inline; } 22.75% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-33 { 0%, 22.74% { display: none; } 22.75% { display: inline; } 23.44% { display: none; } 100% { display: none; } }
+    /* 23.44%（約3.5秒時点）〜 93.10%（13.5秒時点）まで10秒間、完成文を表示キープ */
+    @keyframes step-flow-34 { 0%, 23.43% { display: none; } 23.44% { display: inline; } 93.10% { display: none; } 100% { display: none; } }
+    /* 【新演出】93.10% 〜 96.55%（0.5秒間）全選択（背景青反転）状態 */
+    @keyframes step-flow-35 { 0%, 93.09% { display: none; } 93.10% { display: inline; } 96.55% { display: none; } 100% { display: none; } }
+    /* 【新演出】96.55% 〜 100.0%（0.5秒間）一括削除（テキストなし、初期カーソルのみ点滅）状態 */
+    @keyframes step-flow-36 { 0%, 96.54% { display: none; } 96.55% { display: inline; } 100.00% { display: inline; } }
 
-    /* 次の文字が出るまでのカーソル制御（後半はすべて非表示） */
-    @keyframes hide-cursor-1 { 0%, 3.84% { opacity: 1; } 3.85%, 100% { opacity: 0; } }
-    @keyframes hide-cursor-2 { 0%, 7.68% { opacity: 1; } 7.69%, 100% { opacity: 0; } }
-    @keyframes hide-cursor-3 { 0%, 11.53% { opacity: 1; } 11.54%, 100% { opacity: 0; } }
-    @keyframes hide-cursor-4 { 0%, 15.37% { opacity: 1; } 15.38%, 100% { opacity: 0; } }
-    @keyframes hide-cursor-5 { 0%, 19.22% { opacity: 1; } 19.23%, 100% { opacity: 0; } }
-    @keyframes hide-cursor-6 { 0%, 23.06% { opacity: 1; } 23.07%, 100% { opacity: 0; } }
-    @keyframes hide-cursor-7 { 0%, 26.91% { opacity: 1; } 26.92%, 100% { opacity: 0; } }
-    @keyframes hide-cursor-8 { 0%, 30.75% { opacity: 1; } 30.76%, 100% { opacity: 0; } }
-    @keyframes hide-cursor-9 { 0%, 34.60% { opacity: 1; } 34.61%, 100% { opacity: 0; } }
-    @keyframes hide-cursor-10 { 0%, 38.44% { opacity: 1; } 38.45%, 100% { opacity: 0; } }
-    @keyframes hide-cursor-11 { 0%, 42.29% { opacity: 1; } 42.30%, 100% { opacity: 0; } }
-    @keyframes hide-cursor-12 { 0%, 46.13% { opacity: 1; } 46.14%, 100% { opacity: 0; } }
-    @keyframes hide-cursor-13 { 0%, 49.98% { opacity: 1; } 49.99%, 100% { opacity: 0; } }
-
-    /* スピードアップしたアニメーションの適用 */
-    .char-0 { animation: key-frame-0 4s infinite; }
-    .char-1 { animation: key-frame-1 4s infinite; }
-    .char-2 { animation: key-frame-2 4s infinite; }
-    .char-3 { animation: key-frame-3 4s infinite; }
-    .char-4 { animation: key-frame-4 4s infinite; }
-    .char-5 { animation: key-frame-5 4s infinite; }
-    .char-6 { animation: key-frame-6 4s infinite; }
-    .char-7 { animation: key-frame-7 4s infinite; }
-    .char-8 { animation: key-frame-8 4s infinite; }
-    .char-9 { animation: key-frame-9 4s infinite; }
-    .char-10 { animation: key-frame-10 4s infinite; }
-    .char-11 { animation: key-frame-11 4s infinite; }
-    .char-12 { animation: key-frame-12 4s infinite; }
-    .char-13 { animation: key-frame-13 4s infinite; }
-
-    .cur-1 { animation: hide-cursor-1 4s infinite; }
-    .cur-2 { animation: hide-cursor-2 4s infinite; }
-    .cur-3 { animation: hide-cursor-3 4s infinite; }
-    .cur-4 { animation: hide-cursor-4 4s infinite; }
-    .cur-5 { animation: hide-cursor-5 4s infinite; }
-    .cur-6 { animation: hide-cursor-6 4s infinite; }
-    .cur-7 { animation: hide-cursor-7 4s infinite; }
-    .cur-8 { animation: hide-cursor-8 4s infinite; }
-    .cur-9 { animation: hide-cursor-9 4s infinite; }
-    .cur-10 { animation: hide-cursor-10 4s infinite; }
-    .cur-11 { animation: hide-cursor-11 4s infinite; }
-    .cur-12 { animation: hide-cursor-12 4s infinite; }
-    .cur-13 { animation: hide-cursor-13 4s infinite; }
+    /* 各ステップにアニメーションを割り当て（合計14.5sに変更） */
+    .s-0  { animation: step-flow-0 14.5s infinite; }   .s-1  { animation: step-flow-1 14.5s infinite; }
+    .s-2  { animation: step-flow-2 14.5s infinite; }   .s-3  { animation: step-flow-3 14.5s infinite; }
+    .s-4  { animation: step-flow-4 14.5s infinite; }   .s-5  { animation: step-flow-5 14.5s infinite; }
+    .s-6  { animation: step-flow-6 14.5s infinite; }   .s-7  { animation: step-flow-7 14.5s infinite; }
+    .s-8  { animation: step-flow-8 14.5s infinite; }   .s-9  { animation: step-flow-9 14.5s infinite; }
+    .s-10 { animation: step-flow-10 14.5s infinite; }  .s-11 { animation: step-flow-11 14.5s infinite; }
+    .s-12 { animation: step-flow-12 14.5s infinite; }  .s-13 { animation: step-flow-13 14.5s infinite; }
+    .s-14 { animation: step-flow-14 14.5s infinite; }  .s-15 { animation: step-flow-14 14.5s infinite; }
+    .s-16 { animation: step-flow-16 14.5s infinite; }  .s-17 { animation: step-flow-17 14.5s infinite; }
+    .s-18 { animation: step-flow-18 14.5s infinite; }  .s-19 { animation: step-flow-19 14.5s infinite; }
+    .s-20 { animation: step-flow-20 14.5s infinite; }  .s-21 { animation: step-flow-21 14.5s infinite; }
+    .s-22 { animation: step-flow-22 14.5s infinite; }  .s-23 { animation: step-flow-23 14.5s infinite; }
+    .s-24 { animation: step-flow-24 14.5s infinite; }  .s-25 { animation: step-flow-25 14.5s infinite; }
+    .s-26 { animation: step-flow-26 14.5s infinite; }  .s-27 { animation: step-flow-27 14.5s infinite; }
+    .s-28 { animation: step-flow-28 14.5s infinite; }  .s-29 { animation: step-flow-29 14.5s infinite; }
+    .s-30 { animation: step-flow-30 14.5s infinite; }  .s-31 { animation: step-flow-31 14.5s infinite; }
+    .s-32 { animation: step-flow-32 14.5s infinite; }  .s-33 { animation: step-flow-33 14.5s infinite; }
+    .s-34 { animation: step-flow-34 14.5s infinite; }  .s-35 { animation: step-flow-35 14.5s infinite; }
+    .s-36 { animation: step-flow-36 14.5s infinite; }
   </style>
 
   <defs>
@@ -91,86 +102,61 @@
 
   <g transform="translate(427, 100) scale(1, 1) translate(-427, -100)">
     <path d="" fill="url(#linear)" opacity="0.4">
-      <animate attributeName="d" dur="20s" repeatCount="indefinite" keyTimes="0;0.333;0.667;1" calcMode="spline" keySplines="0.2 0 0.2 1;0.2 0 0.2 1;0.2 0 0.2 1" begin="0s" values="M0 0L 0 120Q 213.5 160 427 130T 854 155L 854 0 Z;
-                M0 0L 0 145Q 213.5 160 427 140T 854 130L 854 0 Z;
-                M0 0L 0 165Q 213.5 135 427 165T 854 130L 854 0 Z;
-                M0 0L 0 120Q 213.5 160 427 130T 854 155L 854 0 Z"></animate>
+      <animate attributeName="d" dur="20s" repeatCount="indefinite" keyTimes="0;0.333;0.667;1" calcMode="spline" keySplines="0.2 0 0.2 1;0.2 0 0.2 1;0.2 0 0.2 1" begin="0s" values="M0 0L 0 120Q 213.5 160 427 130T 854 155L 854 0 Z; M0 0L 0 145Q 213.5 160 427 140T 854 130L 854 0 Z; M0 0L 0 165Q 213.5 135 427 165T 854 130L 854 0 Z; M0 0L 0 120Q 213.5 160 427 130T 854 155L 854 0 Z"></animate>
     </path>
-
     <path d="" fill="url(#linear)" opacity="0.4">
-      <animate attributeName="d" dur="20s" repeatCount="indefinite" keyTimes="0;0.333;0.667;1" calcMode="spline" keySplines="0.2 0 0.2 1;0.2 0 0.2 1;0.2 0 0.2 1" begin="-10s" values="M0 0L 0 135Q 213.5 180 427 150T 854 160L 854 0 Z;
-                M0 0L 0 150Q 213.5 120 427 120T 854 140L 854 0 Z;
-                M0 0L 0 145Q 213.5 125 427 150T 854 165L 854 0 Z;
-                M0 0L 0 135Q 213.5 180 427 150T 854 160L 854 0 Z"></animate>
+      <animate attributeName="d" dur="20s" repeatCount="indefinite" keyTimes="0;0.333;0.667;1" calcMode="spline" keySplines="0.2 0 0.2 1;0.2 0 0.2 1;0.2 0 0.2 1" begin="-10s" values="M0 0L 0 135Q 213.5 180 427 150T 854 160L 854 0 Z; M0 0L 0 150Q 213.5 120 427 120T 854 140L 854 0 Z; M0 0L 0 145Q 213.5 125 427 150T 854 165L 854 0 Z; M0 0L 0 135Q 213.5 180 427 150T 854 160L 854 0 Z"></animate>
     </path>
   </g>
 
-  <g class="typewriter-group" transform="translate(195, 115)">
-    <g class="cur-1"><line class="cursor-line" x1="0" y1="-42" x2="0" y2="5" /></g>
+  <g class="typewriter-group" transform="translate(45, 115)">
+    <g class="s-0"><line class="cursor-line" x1="0" y1="-42" x2="0" y2="5" /></g>
 
-    <g class="char-1">
-      <text x="0" y="0">全</text>
-      <g class="cur-2"><line class="cursor-line" x1="52" y1="-42" x2="52" y2="5" /></g>
+    <g class="s-1"><text x="0" y="0">ｚ</text><line class="cursor-line" x1="30" y1="-42" x2="30" y2="5" /></g>
+    <g class="s-2"><text x="0" y="0">ぜ</text><line class="cursor-line" x1="50" y1="-42" x2="50" y2="5" /></g>
+    <g class="s-3"><text x="0" y="0">ぜｎ</text><line class="cursor-line" x1="80" y1="-42" x2="80" y2="5" /></g>
+    <g class="s-4"><text x="0" y="0">ぜん</text><line class="cursor-line" x1="100" y1="-42" x2="100" y2="5" /></g>
+    <g class="s-5"><text x="0" y="0">ぜんｚ</text><line class="cursor-line" x1="130" y1="-42" x2="130" y2="5" /></g>
+    <g class="s-6"><text x="0" y="0">ぜんじ</text><line class="cursor-line" x1="150" y1="-42" x2="150" y2="5" /></g>
+    <g class="s-7"><text x="0" y="0">ぜんじｎ</text><line class="cursor-line" x1="180" y1="-42" x2="180" y2="5" /></g>
+    <g class="s-8"><text x="0" y="0">ぜんじん</text><line class="cursor-line" x1="200" y1="-42" x2="200" y2="5" /></g>
+    <g class="s-9"><text x="0" y="0">ぜんじんｒ</text><line class="cursor-line" x1="230" y1="-42" x2="230" y2="5" /></g>
+    <g class="s-10"><text x="0" y="0">ぜんじんる</text><line class="cursor-line" x1="250" y1="-42" x2="250" y2="5" /></g>
+    <g class="s-11"><text x="0" y="0">ぜんじんるい</text><line class="cursor-line" x1="300" y1="-42" x2="300" y2="5" /></g>
+    <g class="s-12"><text x="0" y="0">全人類</text><line class="cursor-line" x1="150" y1="-42" x2="150" y2="5" /></g>
+
+    <g class="s-13"><text x="0" y="0">全人類T</text><line class="cursor-line" x1="180" y1="-42" x2="180" y2="5" /></g>
+    <g class="s-14"><text x="0" y="0">全人類Te</text><line class="cursor-line" x1="210" y1="-42" x2="210" y2="5" /></g>
+    <g class="s-15"><text x="0" y="0">全人類Ter</text><line class="cursor-line" x1="240" y1="-42" x2="240" y2="5" /></g>
+    <g class="s-16"><text x="0" y="0">全人類Terr</text><line class="cursor-line" x1="270" y1="-42" x2="270" y2="5" /></g>
+    <g class="s-17"><text x="0" y="0">全人類Terra</text><line class="cursor-line" x1="300" y1="-42" x2="300" y2="5" /></g>
+    <g class="s-18"><text x="0" y="0">全人類Terrar</text><line class="cursor-line" x1="330" y1="-42" x2="330" y2="5" /></g>
+    <g class="s-19"><text x="0" y="0">全人類Terrari</text><line class="cursor-line" x1="360" y1="-42" x2="360" y2="5" /></g>
+    <g class="s-20"><text x="0" y="0">全人類Terraria</text><line class="cursor-line" x1="390" y1="-42" x2="390" y2="5" /></g>
+
+    <g class="s-21"><text x="0" y="0">全人類Terrariaｐ</text><line class="cursor-line" x1="420" y1="-42" x2="420" y2="5" /></g>
+    <g class="s-22"><text x="0" y="0">全人類Terrariaぷ</text><line class="cursor-line" x1="440" y1="-42" x2="440" y2="5" /></g>
+    <g class="s-23"><text x="0" y="0">全人類Terrariaぷｒ</text><line class="cursor-line" x1="470" y1="-42" x2="470" y2="5" /></g>
+    <g class="s-24"><text x="0" y="0">全人類Terrariaぷれ</text><line class="cursor-line" x1="490" y1="-42" x2="490" y2="5" /></g>
+    <g class="s-25"><text x="0" y="0">全人類Terrariaぷれｉ</text><line class="cursor-line" x1="520" y1="-42" x2="520" y2="5" /></g>
+    <g class="s-26"><text x="0" y="0">全人類Terrariaぷれい</text><line class="cursor-line" x1="540" y1="-42" x2="540" y2="5" /></g>
+    <g class="s-27"><text x="0" y="0">全人類Terrariaぷれいｓ</text><line class="cursor-line" x1="570" y1="-42" x2="570" y2="5" /></g>
+    <g class="s-28"><text x="0" y="0">全人類Terrariaぷれいし</text><line class="cursor-line" x1="590" y1="-42" x2="590" y2="5" /></g>
+    <g class="s-29"><text x="0" y="0">全人類Terrariaぷれいしょ</text><line class="cursor-line" x1="640" y1="-42" x2="640" y2="5" /></g>
+    <g class="s-30"><text x="0" y="0">全人類Terrariaぷれいしょｕ</text><line class="cursor-line" x1="670" y1="-42" x2="670" y2="5" /></g>
+    <g class="s-31"><text x="0" y="0">全人類Terrariaぷれいしよう</text><line class="cursor-line" x1="690" y1="-42" x2="690" y2="5" /></g>
+    <g class="s-32"><text x="0" y="0">全人類Terrariaプレイしよう</text><line class="cursor-line" x1="690" y1="-42" x2="690" y2="5" /></g>
+    <g class="s-33"><text x="0" y="0">全人類Terrariaプレイしよう！</text><line class="cursor-line" x1="740" y1="-42" x2="740" y2="5" /></g>
+    
+    <g class="s-34"><text x="0" y="0">全人類Terrariaプレイしよう！</text><line class="cursor-line" x1="740" y1="-42" x2="740" y2="5" /></g>
+    
+    <g class="s-35">
+      <rect class="selection-bg" x="-4" y="-45" width="748" height="58" />
+      <text x="0" y="0">全人類Terrariaプレイしよう！</text>
     </g>
-
-    <g class="char-2">
-      <text x="52" y="0">人</text>
-      <g class="cur-3"><line class="cursor-line" x1="104" y1="-42" x2="104" y2="5" /></g>
-    </g>
-
-    <g class="char-3">
-      <text x="104" y="0">類</text>
-      <g class="cur-4"><line class="cursor-line" x1="156" y1="-42" x2="156" y2="5" /></g>
-    </g>
-
-    <g class="char-4">
-      <text x="156" y="0">T</text>
-      <g class="cur-5"><line class="cursor-line" x1="188" y1="-42" x2="188" y2="5" /></g>
-    </g>
-
-    <g class="char-5">
-      <text x="188" y="0">e</text>
-      <g class="cur-6"><line class="cursor-line" x1="218" y1="-42" x2="218" y2="5" /></g>
-    </g>
-
-    <g class="char-6">
-      <text x="218" y="0">r</text>
-      <g class="cur-7"><line class="cursor-line" x1="244" y1="-42" x2="244" y2="5" /></g>
-    </g>
-
-    <g class="char-7">
-      <text x="244" y="0">r</text>
-      <g class="cur-8"><line class="cursor-line" x1="270" y1="-42" x2="270" y2="5" /></g>
-    </g>
-
-    <g class="char-8">
-      <text x="270" y="0">a</text>
-      <g class="cur-9"><line class="cursor-line" x1="300" y1="-42" x2="300" y2="5" /></g>
-    </g>
-
-    <g class="char-9">
-      <text x="300" y="0">r</text>
-      <g class="cur-10"><line class="cursor-line" x1="326" y1="-42" x2="326" y2="5" /></g>
-    </g>
-
-    <g class="char-10">
-      <text x="326" y="0">i</text>
-      <g class="cur-11"><line class="cursor-line" x1="344" y1="-42" x2="344" y2="5" /></g>
-    </g>
-
-    <g class="char-11">
-      <text x="344" y="0">a</text>
-      <g class="cur-12"><line class="cursor-line" x1="374" y1="-42" x2="374" y2="5" /></g>
-    </g>
-
-    <g class="char-12">
-      <text x="374" y="0">や</text>
-      <g class="cur-13"><line class="cursor-line" x1="426" y1="-42" x2="426" y2="5" /></g>
-    </g>
-
-    <g class="char-13">
-      <text x="426" y="0">れ</text>
-      <line class="cursor-line" x1="478" y1="-42" x2="478" y2="5" />
+    
+    <g class="s-36">
+      <line class="cursor-line" x1="0" y1="-42" x2="0" y2="5" />
     </g>
   </g>
 </svg>
