@@ -1,0 +1,181 @@
+<svg width="854" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="z-index:1;position:relative" viewBox="0 0 854 200">
+  <style>
+    /* 全体共通テキストスタイル */
+    .typewriter-group {
+      font-family: "Courier New", Courier, Monaco, Consolas, monospace;
+      font-size: 50px;
+      font-weight: 700;
+      fill: #ffffff;
+      text-shadow: 0 0 10px rgba(255, 60, 0, 0.8), 0 0 20px rgba(255, 150, 0, 0.5);
+    }
+
+    /* 【修正】全選択（Ctrl+A）時のおなじみの青背景スタイル */
+    .selection-bg {
+      fill: #0078d7;
+    }
+
+    /* カーソルの点滅 */
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .cursor-line {
+      stroke: #ffffff;
+      stroke-width: 4;
+      animation: blink 0.7s infinite;
+      filter: drop-shadow(0 0 4px #ff3300);
+    }
+
+    /* 火の粉の上昇アニメーション */
+    @keyframes spark-up {
+      0% { transform: translateY(210px) translateX(0px) scale(0.5); opacity: 0; }
+      10% { opacity: 1; }
+      80% { opacity: 0.8; }
+      100% { transform: translateY(-20px) translateX(var(--move-x)) scale(1.2); opacity: 0; }
+    }
+    .spark {
+      fill: url(#spark-grad);
+      animation: spark-up var(--dur) infinite linear;
+    }
+
+    /* タイピング14.0秒ループ（全30ステップ。約3.0秒でタイピング完了、10秒待機、0.5秒全選択、0.5秒消去） */
+    @keyframes step-flow-0  { 0% { display: inline; } 0.71% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-1  { 0%, 0.70% { display: none; } 0.71% { display: inline; } 1.42% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-2  { 0%, 1.41% { display: none; } 1.42% { display: inline; } 2.13% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-3  { 0%, 2.12% { display: none; } 2.13% { display: inline; } 2.84% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-4  { 0%, 2.83% { display: none; } 2.84% { display: inline; } 3.55% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-5  { 0%, 3.54% { display: none; } 3.55% { display: inline; } 4.26% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-6  { 0%, 4.25% { display: none; } 4.26% { display: inline; } 4.97% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-7  { 0%, 4.96% { display: none; } 4.97% { display: inline; } 5.68% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-8  { 0%, 5.67% { display: none; } 5.68% { display: inline; } 6.39% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-9  { 0%, 6.38% { display: none; } 6.39% { display: inline; } 7.10% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-10 { 0%, 7.09% { display: none; } 7.10% { display: inline; } 7.81% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-11 { 0%, 7.80% { display: none; } 7.81% { display: inline; } 8.52% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-12 { 0%, 8.51% { display: none; } 8.52% { display: inline; } 9.23% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-13 { 0%, 9.22% { display: none; } 9.23% { display: inline; } 9.94% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-14 { 0%, 9.93% { display: none; } 9.94% { display: inline; } 10.65% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-15 { 0%, 10.64% { display: none; } 10.65% { display: inline; } 11.36% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-16 { 0%, 11.35% { display: none; } 11.36% { display: inline; } 12.07% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-17 { 0%, 12.06% { display: none; } 12.07% { display: inline; } 12.78% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-18 { 0%, 12.77% { display: none; } 12.78% { display: inline; } 13.49% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-19 { 0%, 13.48% { display: none; } 13.49% { display: inline; } 14.20% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-20 { 0%, 14.19% { display: none; } 14.20% { display: inline; } 14.91% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-21 { 0%, 14.90% { display: none; } 14.91% { display: inline; } 15.62% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-22 { 0%, 15.61% { display: none; } 15.62% { display: inline; } 16.33% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-23 { 0%, 16.32% { display: none; } 16.33% { display: inline; } 17.04% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-24 { 0%, 17.03% { display: none; } 17.04% { display: inline; } 17.75% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-25 { 0%, 17.74% { display: none; } 17.75% { display: inline; } 18.46% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-26 { 0%, 18.45% { display: none; } 18.46% { display: inline; } 19.17% { display: none; } 100% { display: none; } }
+    @keyframes step-flow-27 { 0%, 19.16% { display: none; } 19.17% { display: inline; } 21.30% { display: none; } 100% { display: none; } }
+    /* 21.30% 〜 92.86%（13.0秒時点）10秒間、完成文をキープ */
+    @keyframes step-flow-28 { 0%, 21.29% { display: none; } 21.30% { display: inline; } 92.86% { display: none; } 100% { display: none; } }
+    /* 92.86% 〜 96.43%（0.5秒間）全選択（背景が選択ブルーに反転） */
+    @keyframes step-flow-29 { 0%, 92.85% { display: none; } 92.86% { display: inline; } 96.43% { display: none; } 100% { display: none; } }
+    /* 96.43% 〜 100.0%（0.5秒間）一括削除（空白、左端カーソルのみ） */
+    @keyframes step-flow-30 { 0%, 96.42% { display: none; } 96.43% { display: inline; } 100.00% { display: inline; } }
+
+    /* 各ステップにアニメーションを割り当て */
+    .s-0  { animation: step-flow-0 14.0s infinite; }   .s-1  { animation: step-flow-1 14.0s infinite; }
+    .s-2  { animation: step-flow-2 14.0s infinite; }   .s-3  { animation: step-flow-3 14.0s infinite; }
+    .s-4  { animation: step-flow-4 14.0s infinite; }   .s-5  { animation: step-flow-5 14.0s infinite; }
+    .s-6  { animation: step-flow-6 14.0s infinite; }   .s-7  { animation: step-flow-7 14.0s infinite; }
+    .s-8  { animation: step-flow-8 14.0s infinite; }   .s-9  { animation: step-flow-9 14.0s infinite; }
+    .s-10 { animation: step-flow-10 14.0s infinite; }  .s-11 { animation: step-flow-11 14.0s infinite; }
+    .s-12 { animation: step-flow-12 14.0s infinite; }  .s-13 { animation: step-flow-13 14.0s infinite; }
+    .s-14 { animation: step-flow-14 14.0s infinite; }  .s-15 { animation: step-flow-15 14.0s infinite; }
+    .s-16 { animation: step-flow-16 14.0s infinite; }  .s-17 { animation: step-flow-17 14.0s infinite; }
+    .s-18 { animation: step-flow-18 14.0s infinite; }  .s-19 { animation: step-flow-19 14.0s infinite; }
+    .s-20 { animation: step-flow-20 14.0s infinite; }  .s-21 { animation: step-flow-21 14.0s infinite; }
+    .s-22 { animation: step-flow-22 14.0s infinite; }  .s-23 { animation: step-flow-23 14.0s infinite; }
+    .s-24 { animation: step-flow-24 14.0s infinite; }  .s-25 { animation: step-flow-25 14.0s infinite; }
+    .s-26 { animation: step-flow-26 14.0s infinite; }  .s-27 { animation: step-flow-27 14.0s infinite; }
+    .s-28 { animation: step-flow-28 14.0s infinite; }  .s-29 { animation: step-flow-29 14.0s infinite; }
+    .s-30 { animation: step-flow-30 14.0s infinite; }
+  </style>
+
+  <defs>
+    <linearGradient id="fire-sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#140200"></stop>
+      <stop offset="40%" stop-color="#3d0800"></stop>
+      <stop offset="75%" stop-color="#801100"></stop>
+      <stop offset="100%" stop-color="#ff3c00"></stop>
+    </linearGradient>
+    <linearGradient id="magma" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff1a00" stop-opacity="0.3"></stop>
+      <stop offset="50%" stop-color="#ff6600" stop-opacity="0.5"></stop>
+      <stop offset="100%" stop-color="#ffaa00" stop-opacity="0.2"></stop>
+    </linearGradient>
+    <radialGradient id="spark-grad">
+      <stop offset="0%" stop-color="#ffffff"></stop>
+      <stop offset="40%" stop-color="#ffcc00"></stop>
+      <stop offset="80%" stop-color="#ff3300"></stop>
+      <stop offset="100%" stop-color="#ff3300" stop-opacity="0"></stop>
+    </radialGradient>
+  </defs>
+
+  <rect width="854" height="200" fill="url(#fire-sky)" />
+
+  <g transform="translate(427, 100) scale(1, 1) translate(-427, -100)">
+    <path d="" fill="url(#magma)">
+      <animate attributeName="d" dur="12s" repeatCount="indefinite" keyTimes="0;0.333;0.667;1" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" begin="0s" values="M0 200L 0 140Q 213.5 100 427 150T 854 120L 854 200 Z; M0 200L 0 110Q 213.5 160 427 120T 854 150L 854 200 Z; M0 200L 0 150Q 213.5 110 427 160T 854 110L 854 200 Z; M0 200L 0 140Q 213.5 100 427 150T 854 120L 854 200 Z"></animate>
+    </path>
+  </g>
+
+  <g>
+    <circle class="spark" cx="80" cy="0" r="5" style="--dur: 4.5s; --move-x: 40px; animation-delay: 0s;" />
+    <circle class="spark" cx="210" cy="0" r="3" style="--dur: 3.2s; --move-x: -30px; animation-delay: -1.5s;" />
+    <circle class="spark" cx="350" cy="0" r="6" style="--dur: 5.0s; --move-x: 60px; animation-delay: -0.5s;" />
+    <circle class="spark" cx="520" cy="0" r="4" style="--dur: 3.8s; --move-x: -20px; animation-delay: -2.2s;" />
+    <circle class="spark" cx="710" cy="0" r="5" style="--dur: 4.1s; --move-x: 50px; animation-delay: -1.0s;" />
+    <circle class="spark" cx="140" cy="0" r="4" style="--dur: 3.6s; --move-x: 25px; animation-delay: -0.8s;" />
+    <circle class="spark" cx="290" cy="0" r="6" style="--dur: 4.8s; --move-x: -50px; animation-delay: -2.7s;" />
+    <circle class="spark" cx="460" cy="0" r="3" style="--dur: 3.0s; --move-x: 35px; animation-delay: -0.2s;" />
+    <circle class="spark" cx="630" cy="0" r="5" style="--dur: 4.3s; --move-x: -45px; animation-delay: -1.9s;" />
+    <circle class="spark" cx="790" cy="0" r="4" style="--dur: 3.9s; --move-x: 15px; animation-delay: -3.1s;" />
+  </g>
+
+  <g class="typewriter-group" transform="translate(45, 115)">
+    <g class="s-0"><line class="cursor-line" x1="0" y1="-42" x2="0" y2="5" /></g>
+
+    <g class="s-1"><text x="0" y="0">T</text><line class="cursor-line" x1="30" y1="-42" x2="30" y2="5" /></g>
+    <g class="s-2"><text x="0" y="0">Tm</text><line class="cursor-line" x1="60" y1="-42" x2="60" y2="5" /></g>
+    <g class="s-3"><text x="0" y="0">Tmo</text><line class="cursor-line" x1="90" y1="-42" x2="90" y2="5" /></g>
+    <g class="s-4"><text x="0" y="0">Tmod</text><line class="cursor-line" x1="120" y1="-42" x2="120" y2="5" /></g>
+
+    <g class="s-5"><text x="0" y="0">Tmodｍ</text><line class="cursor-line" x1="150" y1="-42" x2="150" y2="5" /></g>
+    <g class="s-6"><text x="0" y="0">Tmodも</text><line class="cursor-line" x1="170" y1="-42" x2="170" y2="5" /></g>
+    <g class="s-7"><text x="0" y="0">Tmodもａ</text><line class="cursor-line" x1="200" y1="-42" x2="200" y2="5" /></g>
+    <g class="s-8"><text x="0" y="0">Tmodもあ</text><line class="cursor-line" x1="220" y1="-42" x2="220" y2="5" /></g>
+    <g class="s-9"><text x="0" y="0">Tmodもあｓ</text><line class="cursor-line" x1="250" y1="-42" x2="250" y2="5" /></g>
+    <g class="s-10"><text x="0" y="0">Tmodもあそ</text><line class="cursor-line" x1="270" y1="-42" x2="270" y2="5" /></g>
+    <g class="s-11"><text x="0" y="0">Tmodもあそｂ</text><line class="cursor-line" x1="300" y1="-42" x2="300" y2="5" /></g>
+    <g class="s-12"><text x="0" y="0">Tmodもあそぼ</text><line class="cursor-line" x1="320" y1="-42" x2="320" y2="5" /></g>
+    <g class="s-13"><text x="0" y="0">Tmodもあそぼｕ</text><line class="cursor-line" x1="350" y1="-42" x2="350" y2="5" /></g>
+    <g class="s-14"><text x="0" y="0">Tmodもあそぼう</text><line class="cursor-line" x1="370" y1="-42" x2="370" y2="5" /></g>
+    <g class="s-15"><text x="0" y="0">Tmodも遊ぼう</text><line class="cursor-line" x1="320" y1="-42" x2="320" y2="5" /></g>
+
+    <g class="s-16"><text x="0" y="0">Tmodも遊ぼう！</text><line class="cursor-line" x1="370" y1="-42" x2="370" y2="5" /></g>
+    <g class="s-17"><text x="0" y="0">Tmodも遊ぼう！</text><line class="cursor-line" x1="370" y1="-42" x2="370" y2="5" /></g>
+    <g class="s-18"><text x="0" y="0">Tmodも遊ぼう！</text><line class="cursor-line" x1="370" y1="-42" x2="370" y2="5" /></g>
+    <g class="s-19"><text x="0" y="0">Tmodも遊ぼう！</text><line class="cursor-line" x1="370" y1="-42" x2="370" y2="5" /></g>
+    <g class="s-20"><text x="0" y="0">Tmodも遊ぼう！</text><line class="cursor-line" x1="370" y1="-42" x2="370" y2="5" /></g>
+    <g class="s-21"><text x="0" y="0">Tmodも遊ぼう！</text><line class="cursor-line" x1="370" y1="-42" x2="370" y2="5" /></g>
+    <g class="s-22"><text x="0" y="0">Tmodも遊ぼう！</text><line class="cursor-line" x1="370" y1="-42" x2="370" y2="5" /></g>
+    <g class="s-23"><text x="0" y="0">Tmodも遊ぼう！</text><line class="cursor-line" x1="370" y1="-42" x2="370" y2="5" /></g>
+    <g class="s-24"><text x="0" y="0">Tmodも遊ぼう！</text><line class="cursor-line" x1="370" y1="-42" x2="370" y2="5" /></g>
+    <g class="s-25"><text x="0" y="0">Tmodも遊ぼう！</text><line class="cursor-line" x1="370" y1="-42" x2="370" y2="5" /></g>
+    <g class="s-26"><text x="0" y="0">Tmodも遊ぼう！</text><line class="cursor-line" x1="370" y1="-42" x2="370" y2="5" /></g>
+    <g class="s-27"><text x="0" y="0">Tmodも遊ぼう！</text><line class="cursor-line" x1="370" y1="-42" x2="370" y2="5" /></g>
+
+    <g class="s-28"><text x="0" y="0">Tmodも遊ぼう！</text><line class="cursor-line" x1="370" y1="-42" x2="370" y2="5" /></g>
+
+    <g class="s-29">
+      <rect class="selection-bg" x="-4" y="-45" width="378" height="58" />
+      <text x="0" y="0">Tmodも遊ぼう！</text>
+    </g>
+
+    <g class="s-30">
+      <line class="cursor-line" x1="0" y1="-42" x2="0" y2="5" />
+    </g>
+  </g>
+</svg>
