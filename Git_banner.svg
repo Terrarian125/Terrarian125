@@ -1,0 +1,176 @@
+<svg width="854" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="z-index:1;position:relative" viewBox="0 0 854 200">
+  <style>
+    /* 全体共通テキストスタイル */
+    .typewriter-group {
+      font-family: Consolas, Monaco, "Courier New", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 52px;
+      font-weight: 700;
+      fill: #ffffff;
+    }
+
+    /* カーソルの常時点滅アニメーション */
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .cursor-line {
+      stroke: #ffffff;
+      stroke-width: 4;
+      animation: blink 0.7s infinite;
+    }
+
+    /* 全体4秒ループ：最初の50%（2秒）でタイピング、後半50%（2秒）は全文字表示で待機 */
+    @keyframes key-frame-0 { 0%, 100% { opacity: 1; } }
+    @keyframes key-frame-1 { 0%, 3.84% { opacity: 0; } 3.85%, 100% { opacity: 1; } }
+    @keyframes key-frame-2 { 0%, 7.68% { opacity: 0; } 7.69%, 100% { opacity: 1; } }
+    @keyframes key-frame-3 { 0%, 11.53% { opacity: 0; } 11.54%, 100% { opacity: 1; } }
+    @keyframes key-frame-4 { 0%, 15.37% { opacity: 0; } 15.38%, 100% { opacity: 1; } }
+    @keyframes key-frame-5 { 0%, 19.22% { opacity: 0; } 19.23%, 100% { opacity: 1; } }
+    @keyframes key-frame-6 { 0%, 23.06% { opacity: 0; } 23.07%, 100% { opacity: 1; } }
+    @keyframes key-frame-7 { 0%, 26.91% { opacity: 0; } 26.92%, 100% { opacity: 1; } }
+    @keyframes key-frame-8 { 0%, 30.75% { opacity: 0; } 30.76%, 100% { opacity: 1; } }
+    @keyframes key-frame-9 { 0%, 34.60% { opacity: 0; } 34.61%, 100% { opacity: 1; } }
+    @keyframes key-frame-10 { 0%, 38.44% { opacity: 0; } 38.45%, 100% { opacity: 1; } }
+    @keyframes key-frame-11 { 0%, 42.29% { opacity: 0; } 42.30%, 100% { opacity: 1; } }
+    @keyframes key-frame-12 { 0%, 46.13% { opacity: 0; } 46.14%, 100% { opacity: 1; } }
+    @keyframes key-frame-13 { 0%, 49.98% { opacity: 0; } 49.99%, 100% { opacity: 1; } }
+
+    /* 次の文字が出るまでのカーソル制御（後半はすべて非表示） */
+    @keyframes hide-cursor-1 { 0%, 3.84% { opacity: 1; } 3.85%, 100% { opacity: 0; } }
+    @keyframes hide-cursor-2 { 0%, 7.68% { opacity: 1; } 7.69%, 100% { opacity: 0; } }
+    @keyframes hide-cursor-3 { 0%, 11.53% { opacity: 1; } 11.54%, 100% { opacity: 0; } }
+    @keyframes hide-cursor-4 { 0%, 15.37% { opacity: 1; } 15.38%, 100% { opacity: 0; } }
+    @keyframes hide-cursor-5 { 0%, 19.22% { opacity: 1; } 19.23%, 100% { opacity: 0; } }
+    @keyframes hide-cursor-6 { 0%, 23.06% { opacity: 1; } 23.07%, 100% { opacity: 0; } }
+    @keyframes hide-cursor-7 { 0%, 26.91% { opacity: 1; } 26.92%, 100% { opacity: 0; } }
+    @keyframes hide-cursor-8 { 0%, 30.75% { opacity: 1; } 30.76%, 100% { opacity: 0; } }
+    @keyframes hide-cursor-9 { 0%, 34.60% { opacity: 1; } 34.61%, 100% { opacity: 0; } }
+    @keyframes hide-cursor-10 { 0%, 38.44% { opacity: 1; } 38.45%, 100% { opacity: 0; } }
+    @keyframes hide-cursor-11 { 0%, 42.29% { opacity: 1; } 42.30%, 100% { opacity: 0; } }
+    @keyframes hide-cursor-12 { 0%, 46.13% { opacity: 1; } 46.14%, 100% { opacity: 0; } }
+    @keyframes hide-cursor-13 { 0%, 49.98% { opacity: 1; } 49.99%, 100% { opacity: 0; } }
+
+    /* スピードアップしたアニメーションの適用 */
+    .char-0 { animation: key-frame-0 4s infinite; }
+    .char-1 { animation: key-frame-1 4s infinite; }
+    .char-2 { animation: key-frame-2 4s infinite; }
+    .char-3 { animation: key-frame-3 4s infinite; }
+    .char-4 { animation: key-frame-4 4s infinite; }
+    .char-5 { animation: key-frame-5 4s infinite; }
+    .char-6 { animation: key-frame-6 4s infinite; }
+    .char-7 { animation: key-frame-7 4s infinite; }
+    .char-8 { animation: key-frame-8 4s infinite; }
+    .char-9 { animation: key-frame-9 4s infinite; }
+    .char-10 { animation: key-frame-10 4s infinite; }
+    .char-11 { animation: key-frame-11 4s infinite; }
+    .char-12 { animation: key-frame-12 4s infinite; }
+    .char-13 { animation: key-frame-13 4s infinite; }
+
+    .cur-1 { animation: hide-cursor-1 4s infinite; }
+    .cur-2 { animation: hide-cursor-2 4s infinite; }
+    .cur-3 { animation: hide-cursor-3 4s infinite; }
+    .cur-4 { animation: hide-cursor-4 4s infinite; }
+    .cur-5 { animation: hide-cursor-5 4s infinite; }
+    .cur-6 { animation: hide-cursor-6 4s infinite; }
+    .cur-7 { animation: hide-cursor-7 4s infinite; }
+    .cur-8 { animation: hide-cursor-8 4s infinite; }
+    .cur-9 { animation: hide-cursor-9 4s infinite; }
+    .cur-10 { animation: hide-cursor-10 4s infinite; }
+    .cur-11 { animation: hide-cursor-11 4s infinite; }
+    .cur-12 { animation: hide-cursor-12 4s infinite; }
+    .cur-13 { animation: hide-cursor-13 4s infinite; }
+  </style>
+
+  <defs>
+    <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f0c29"></stop>
+      <stop offset="50%" stop-color="#302b63"></stop>
+      <stop offset="100%" stop-color="#24243e"></stop>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(427, 100) scale(1, 1) translate(-427, -100)">
+    <path d="" fill="url(#linear)" opacity="0.4">
+      <animate attributeName="d" dur="20s" repeatCount="indefinite" keyTimes="0;0.333;0.667;1" calcMode="spline" keySplines="0.2 0 0.2 1;0.2 0 0.2 1;0.2 0 0.2 1" begin="0s" values="M0 0L 0 120Q 213.5 160 427 130T 854 155L 854 0 Z;
+                M0 0L 0 145Q 213.5 160 427 140T 854 130L 854 0 Z;
+                M0 0L 0 165Q 213.5 135 427 165T 854 130L 854 0 Z;
+                M0 0L 0 120Q 213.5 160 427 130T 854 155L 854 0 Z"></animate>
+    </path>
+
+    <path d="" fill="url(#linear)" opacity="0.4">
+      <animate attributeName="d" dur="20s" repeatCount="indefinite" keyTimes="0;0.333;0.667;1" calcMode="spline" keySplines="0.2 0 0.2 1;0.2 0 0.2 1;0.2 0 0.2 1" begin="-10s" values="M0 0L 0 135Q 213.5 180 427 150T 854 160L 854 0 Z;
+                M0 0L 0 150Q 213.5 120 427 120T 854 140L 854 0 Z;
+                M0 0L 0 145Q 213.5 125 427 150T 854 165L 854 0 Z;
+                M0 0L 0 135Q 213.5 180 427 150T 854 160L 854 0 Z"></animate>
+    </path>
+  </g>
+
+  <g class="typewriter-group" transform="translate(195, 115)">
+    <g class="cur-1"><line class="cursor-line" x1="0" y1="-42" x2="0" y2="5" /></g>
+
+    <g class="char-1">
+      <text x="0" y="0">全</text>
+      <g class="cur-2"><line class="cursor-line" x1="52" y1="-42" x2="52" y2="5" /></g>
+    </g>
+
+    <g class="char-2">
+      <text x="52" y="0">人</text>
+      <g class="cur-3"><line class="cursor-line" x1="104" y1="-42" x2="104" y2="5" /></g>
+    </g>
+
+    <g class="char-3">
+      <text x="104" y="0">類</text>
+      <g class="cur-4"><line class="cursor-line" x1="156" y1="-42" x2="156" y2="5" /></g>
+    </g>
+
+    <g class="char-4">
+      <text x="156" y="0">T</text>
+      <g class="cur-5"><line class="cursor-line" x1="188" y1="-42" x2="188" y2="5" /></g>
+    </g>
+
+    <g class="char-5">
+      <text x="188" y="0">e</text>
+      <g class="cur-6"><line class="cursor-line" x1="218" y1="-42" x2="218" y2="5" /></g>
+    </g>
+
+    <g class="char-6">
+      <text x="218" y="0">r</text>
+      <g class="cur-7"><line class="cursor-line" x1="244" y1="-42" x2="244" y2="5" /></g>
+    </g>
+
+    <g class="char-7">
+      <text x="244" y="0">r</text>
+      <g class="cur-8"><line class="cursor-line" x1="270" y1="-42" x2="270" y2="5" /></g>
+    </g>
+
+    <g class="char-8">
+      <text x="270" y="0">a</text>
+      <g class="cur-9"><line class="cursor-line" x1="300" y1="-42" x2="300" y2="5" /></g>
+    </g>
+
+    <g class="char-9">
+      <text x="300" y="0">r</text>
+      <g class="cur-10"><line class="cursor-line" x1="326" y1="-42" x2="326" y2="5" /></g>
+    </g>
+
+    <g class="char-10">
+      <text x="326" y="0">i</text>
+      <g class="cur-11"><line class="cursor-line" x1="344" y1="-42" x2="344" y2="5" /></g>
+    </g>
+
+    <g class="char-11">
+      <text x="344" y="0">a</text>
+      <g class="cur-12"><line class="cursor-line" x1="374" y1="-42" x2="374" y2="5" /></g>
+    </g>
+
+    <g class="char-12">
+      <text x="374" y="0">や</text>
+      <g class="cur-13"><line class="cursor-line" x1="426" y1="-42" x2="426" y2="5" /></g>
+    </g>
+
+    <g class="char-13">
+      <text x="426" y="0">れ</text>
+      <line class="cursor-line" x1="478" y1="-42" x2="478" y2="5" />
+    </g>
+  </g>
+</svg>
