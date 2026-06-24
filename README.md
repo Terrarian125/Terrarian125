@@ -2,7 +2,7 @@
   <img src="Git_banner_01.svg" width="100%" alt="Typing Banner">
 </p>
 <p align="center">
-  <img src="NewGit_banner_02.svg" width="100%" alt="Typing Banner">
+  <img src="Git_banner_02.svg" width="100%" alt="Typing Banner">
 </p>
 
 ###  自己紹介
