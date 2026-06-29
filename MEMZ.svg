@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" style="background-color: #000; font-family: monospace;">
+    
+    <rect x="0" y="0" width="1920" height="1080" fill="#000">
+        <animate attributeName="fill" from="#000" to="#000" dur="5s" keyTimes="0; 1" values="#000; #000" fill="freeze" id="blackout" />
+    </rect>
+
+    <g id="text-alert">
+        <text x="50%" y="45%" text-anchor="middle" font-size="36" font-weight="bold" fill="#fff" opacity="0">
+            Your PC has become a playground for cats...
+            <animate attributeName="opacity" from="0" to="1" begin="1s" dur="0.1s" fill="freeze" />
+        </text>
+        <text x="50%" y="55%" text-anchor="middle" font-size="36" font-weight="bold" fill="#fff" opacity="0">
+           Nyamcat Parody
+            <animate attributeName="opacity" from="0" to="1" begin="2.5s" dur="0.1s" fill="freeze" />
+        </text>
+    </g>
+
+    <g id="memz-scene" opacity="0">
+        <rect x="0" y="0" width="1920" height="1080" fill="#0000ff" />
+        <animate attributeName="opacity" from="0" to="1" begin="5s" dur="0.1s" fill="freeze" />
+
+        <g id="horizontal-rainbow">
+            <path d="M 0 450 L 960 450 L 960 480 L 0 480 Z" fill="#ff0000" />
+            <path d="M 0 480 L 960 480 L 960 510 L 0 510 Z" fill="#ff7f00" />
+            <path d="M 0 510 L 960 510 L 960 540 L 0 540 Z" fill="#ffff00" />
+            <path d="M 0 540 L 960 540 L 960 570 L 0 570 Z" fill="#00ff00" />
+            <path d="M 0 570 L 960 570 L 960 600 L 0 600 Z" fill="#00ffff" />
+            <path d="M 0 600 L 960 600 L 960 630 L 0 630 Z" fill="#8a2be2" />
+            
+            <animateTransform attributeName="transform" type="translate" values="0 -20; 0 20; 0 -20" keyTimes="0; 0.5; 1" dur="0.3s" repeatCount="indefinite" />
+        </g>
+
+        <g id="nyan-cat" transform="translate(960, 540) scale(5, 5)">
+            <rect x="-30" y="-25" width="60" height="50" fill="#ffcc99" stroke="#000" stroke-width="3" rx="8" ry="8"/>
+            <rect x="-22" y="-18" width="44" height="36" fill="#ff99bb" rx="4" ry="4"/>
+            <rect x="-10" y="-10" width="4" height="4" fill="#ff0000"/>
+            <rect x="8" y="-4" width="4" height="4" fill="#0000ff"/>
+            <rect x="-6" y="6" width="4" height="4" fill="#ffff00"/>
+
+            <g id="cat-head">
+                <rect x="10" y="-20" width="30" height="25" fill="#999999" stroke="#000" stroke-width="3" rx="4" ry="4"/>
+                <polygon points="12,-20 20,-30 22,-20" fill="#999999" stroke="#000" stroke-width="3"/>
+                <polygon points="28,-20 36,-30 38,-20" fill="#999999" stroke="#000" stroke-width="3"/>
+                <rect x="18" y="-12" width="4" height="6" fill="#000"/>
+                <rect x="30" y="-12" width="4" height="6" fill="#000"/>
+                <rect x="12" y="-6" width="4" height="4" fill="#ff99bb"/>
+                <rect x="34" y="-6" width="4" height="4" fill="#ff99bb"/>
+                <path d="M 22 -4 Q 24 -2 26 -4 Q 28 -2 30 -4" fill="none" stroke="#000" stroke-width="2"/>
+                
+                <animateTransform attributeName="transform" type="translate" values="0 -2; 0 2; 0 -2" keyTimes="0; 0.5; 1" dur="0.15s" repeatCount="indefinite" />
+            </g>
+            
+            <g id="cat-tail">
+                <path d="M -30 0 Q -45 -10 -40 -2" fill="none" stroke="#999999" stroke-width="8" stroke-linecap="round"/>
+                <animateTransform attributeName="transform" type="rotate" values="-5 0 0; 5 0 0; -5 0 0" keyTimes="0; 0.5; 1" dur="0.15s" repeatCount="indefinite" />
+            </g>
+
+            <g id="cat-legs">
+                <rect x="-20" y="25" width="6" height="8" fill="#999999" stroke="#000" stroke-width="2"/>
+                <rect x="-5" y="25" width="6" height="8" fill="#999999" stroke="#000" stroke-width="2"/>
+                <rect x="10" y="25" width="6" height="8" fill="#999999" stroke="#000" stroke-width="2"/>
+                <rect x="20" y="25" width="6" height="8" fill="#999999" stroke="#000" stroke-width="2"/>
+                <animateTransform attributeName="transform" type="translate" values="0 -1; 0 2; 0 -1" keyTimes="0; 0.5; 1" dur="0.1s" repeatCount="indefinite" />
+            </g>
+        </g>
+
+        <g id="sparkle-stars">
+            <g transform="translate(300, 250)">
+                <polygon points="0,-20 5,-5 20,0 5,5 0,20 -5,5 -20,0 -5,-5" fill="#ffff00" />
+                <animate attributeName="opacity" values="1;0;1" dur="0.4s" repeatCount="indefinite" />
+            </g>
+            <g transform="translate(1600, 300)">
+                <polygon points="0,-30 7,-7 30,0 7,7 0,30 -7,7 -30,0 -7,-7" fill="#ffff00" />
+                <animate attributeName="opacity" values="0;1;0" dur="0.6s" repeatCount="indefinite" />
+            </g>
+            <g transform="translate(450, 850)">
+                <polygon points="0,-15 4,-4 15,0 4,4 0,15 -4,4 -15,0 -4,-4" fill="#ffff00" />
+                <animate attributeName="opacity" values="1;0;1" dur="0.3s" repeatCount="indefinite" />
+            </g>
+            <g transform="translate(1350, 800)">
+                <polygon points="0,-25 6,-6 25,0 6,6 0,25 -6,6 -25,0 -6,-6" fill="#ffff00" />
+                <animate attributeName="opacity" values="0;1;0" dur="0.5s" repeatCount="indefinite" />
+            </g>
+        </g>
+    </g>
+</svg>
