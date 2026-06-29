@@ -16,3 +16,26 @@ Hi there!
 I enjoy creating mods for games like **Terraria**, **Kenshi**, and **Elin** as a hobby.
 
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p align="center">
+  <img src="MEMZ.svg" width="100%" alt="Typing Banner">
+</p>
